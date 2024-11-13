@@ -1,0 +1,169 @@
+    /* Estilos gerais */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    /* Modo escuro */
+    .dark-mode {
+      background-color: #1b1c1d;
+      color: #ffffff; /* Texto branco no modo escuro */
+    }
+    .dark-mode .ui.menu, .dark-mode .ui.container {
+      background-color: #333;
+    }
+    .dark-mode .ui.menu .item, .dark-mode .ui.menu .header.item {
+      color: #ffffff !important; /* Garantir que o texto do menu fique branco */
+    }
+    .dark-mode .content, .dark-mode .meta, .dark-mode .description {
+      color: #ffffff; /* Garantir que o texto das notícias também seja branco */
+    }
+
+    /* Modo alto contraste */
+    .high-contrast {
+      background-color: #000000;
+      color: #ffff00; /* Texto amarelo no alto contraste */
+    }
+    .high-contrast .ui.menu, .high-contrast .ui.container {
+      background-color: #000000;
+    }
+    .high-contrast .ui.menu .item, .high-contrast .ui.menu .header.item {
+      color: #ffff00 !important; /* Garantir que o texto do menu fique amarelo */
+    }
+    .high-contrast .content, .high-contrast .meta, .high-contrast .description {
+      color: #ffff00; /* Garantir que o texto das notícias também seja amarelo */
+    }
+
+    /* Estilos específicos para os textos dentro das notícias e outros conteúdos */
+
+
+    /* Estilo para os títulos de notícias (h2, h3, etc.) */
+    .item .header {
+      color: inherit !important;
+    }
+    .item .meta, .item .description {
+      color: inherit !important;
+    }
+
+    /* Estilos para o cabeçalho e menu */
+    .ui.menu, .header.item {
+      color: inherit;
+    }
+    .ui.menu {
+      background-color: #fff;
+    }
+    .header.item {
+      color: inherit;
+    }
+
+    /* Estilo específico para as seções */
+    .ui.header {
+      color: inherit;
+    }
+
+    .dark-mode .ui.header {
+      color: #ffffff; /* Títulos de seção em branco no modo escuro */
+    }
+
+    .high-contrast .ui.header {
+      color: #ffff00; /* Títulos de seção em amarelo no alto contraste */
+    }
+
+    /* Adicionando estilo para os cards de categoria e destaque */
+    .ui.segment {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .dark-mode .ui.segment {
+      background-color: #333;
+      border: 1px solid #555;
+    }
+
+    .high-contrast .ui.segment {
+      background-color: #000;
+      border: 1px solid #ffff00;
+    }
+
+    /* Estilos para o botão e conteúdo dentro dos cards */
+    .ui.segment h4, .ui.segment p {
+      color: inherit;
+    }
+
+    .dark-mode .ui.segment h4, .dark-mode .ui.segment p {
+      color: #fff;
+    }
+
+    .high-contrast .ui.segment h4, .high-contrast .ui.segment p {
+      color: #ffff00;
+    }
+
+    /* Carrossel de Destaques */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 20px auto;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    
+    .slide {
+      min-width: 100%;
+      position: relative;
+    }
+    
+    .slide img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+    
+    .legend {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    /* Setas de navegação */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 10;
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+      /* Rodapé */
+    .footer {
+      background-color: #1b1c1d;
+      color: white;
+      text-align: center;
+      margin-top: 40px; /* Espaço adicional para o rodapé */
+      box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.1);
+      
+    }

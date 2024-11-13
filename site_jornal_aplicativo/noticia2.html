@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invasão de aranhas na Austrália</title>
+
+    <!--CSS do Semantic UI -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <!--fonte-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!--jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--JavaScript do Semantic UI -->
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+</head>
+
+<body>
+
+    <!--header -->
+    <div id="header-container"></div>
+
+    <!-- Corpo da página -->
+    <div class="ui container" style="margin-top: 70px;">
+        <div id="mainNews" class="ui segment">
+            <h1 class="ui header">
+                Invasão de aranhas na Austrália: milhares de aranhas criam cenário assustador em várias cidades
+                <!-- Ícones para aumentar/diminuir o tamanho da fonte -->
+                <i class="zoom in icon" id="increaseText"
+                    style="cursor: pointer; margin-left: 10px; font-size: 18px;"></i>
+                <i class="zoom out icon" id="decreaseText" style="cursor: pointer; font-size: 18px;"></i>
+                <!-- Ícone de som para narrar o texto -->
+                <i class="volume up icon" id="narrateText" style="cursor: pointer; font-size: 18px;"></i>
+            </h1>
+            <p id="newsContent" style="font-size: 16px;">
+                Nas últimas semanas, uma onda incomum de aranhas tomou conta de diversas cidades na Austrália, alarmando
+                moradores e especialistas. A invasão, considerada uma das maiores dos últimos anos, já impactou áreas
+                rurais e urbanas, causando apreensão e transformando o cotidiano dos australianos.
+                <br>
+                <br>
+                O fenômeno, que começou a ser notado no estado de Victoria e se espalhou por outras regiões, é composto
+                por várias espécies de aranhas, incluindo algumas das mais venenosas do país, como as temidas
+                aranhas-de-teia-de-funil e as armadeiras. Embora a maioria das aranhas observadas sejam inofensivas, a
+                quantidade de aranhas e a proliferação de teias em ruas, fachadas de casas e parques têm gerado
+                desconforto e dificuldades para a população.
+                <br>
+                <br>
+                “Em muitos lugares, as teias cobrem o chão como um manto branco, deixando um aspecto assustador em
+                árvores, cercas e até mesmo em veículos”, relatou a bióloga Sarah Jenkins, especialista em aracnídeos.
+                Segundo ela, a manifestação pode ser uma resposta a mudanças climáticas ou a um desequilíbrio ambiental
+                que está favorecendo a multiplicação dos aracnídeos.
+                <br>
+                <br>
+                Moradores de algumas cidades relataram dificuldades para sair de casa devido ao acúmulo de aranhas nas
+                portas e janelas. As autoridades locais estão recomendando que as pessoas evitem áreas onde há grandes
+                concentrações de teias e, em caso de picada, procurem imediatamente um centro médico.
+                <br>
+                <br>
+                Especialistas estão sendo acionados para investigar o motivo do aumento na população de aranhas e para
+                orientar medidas de controle. Segundo o departamento de saúde local, o uso de repelentes e a vedação de
+                janelas e portas podem ajudar a evitar que as aranhas invadam os interiores das residências.
+                <br>
+                <br>
+                Enquanto isso, a visão de campos e prédios cobertos por uma camada de teias continua atraindo a atenção
+                de curiosos e assustando moradores locais, que aguardam ansiosamente uma solução para essa “onda de oito
+                patas”.
+                <br>
+                <br>
+
+                <img class="ui centered image" src="img/aranhas2.png" alt="Imagem da Nvidia">
+            </p>
+        </div>
+    </div>
+
+    <!--rodapé -->
+    <div id="footer-container"></div>
+
+    <script>
+        $(document).ready(function () {
+            // Carregar o header
+            $("#header-container").load("header.html", function () {
+                $('.ui.dropdown').dropdown();
+            });
+
+            // Carregar o rodapé
+            $("#footer-container").load("footer.html");
+
+            // Controle de tamanho da fonte
+            let fontSize = 16;
+            const newsContent = document.getElementById('newsContent');
+
+            document.getElementById('increaseText').addEventListener('click', () => {
+                fontSize += 2;
+                newsContent.style.fontSize = fontSize + 'px';
+            });
+
+            document.getElementById('decreaseText').addEventListener('click', () => {
+                fontSize = fontSize > 10 ? fontSize - 2 : fontSize;
+                newsContent.style.fontSize = fontSize + 'px';
+            });
+
+            // Variáveis para controle da narração
+            let isSpeaking = false;
+            let speech;
+
+            // Função para iniciar ou parar a narração
+            function toggleNarration() {
+                if (isSpeaking) {
+                    // Se estiver falando, parar
+                    window.speechSynthesis.cancel();
+                    isSpeaking = false;
+                } else {
+                    // Se não estiver falando, iniciar a narração
+                    const text = newsContent.innerText;
+                    speech = new SpeechSynthesisUtterance(text);
+
+                    // Definir idioma e voz (tente mudar para a voz desejada, se disponível)
+                    speech.lang = 'pt-BR';
+                    const voices = window.speechSynthesis.getVoices();
+                    const selectedVoice = voices.find(voice => voice.name.includes("Luciana") || voice.lang === "pt-BR");
+                    if (selectedVoice) {
+                        speech.voice = selectedVoice;
+                    }
+
+                    // Iniciar a narração
+                    window.speechSynthesis.speak(speech);
+                    isSpeaking = true;
+
+                    // Resetar a variável quando a fala termina
+                    speech.onend = () => {
+                        isSpeaking = false;
+                    };
+                }
+            }
+
+            // Evento de clique no ícone de narração
+            document.getElementById('narrateText').addEventListener('click', toggleNarration);
+
+            // Controle de modo escuro e alto contraste
+            $(document).on("click", "#darkModeToggle", function () {
+                document.body.classList.toggle("dark-mode");
+                document.body.classList.remove("high-contrast");
+            });
+
+            $(document).on("click", "#highContrastToggle", function () {
+                document.body.classList.toggle("high-contrast");
+                document.body.classList.remove("dark-mode");
+            });
+        });
+    </script>
+</body>
+
+</html>

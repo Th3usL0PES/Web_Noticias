@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NVIDIA RTX 50 Series:</title>
+
+
+
+    <!--CSS do Semantic UI -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+
+    <!--fonte -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+
+
+    <!--jQuery -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!--JavaScript do Semantic UI -->
+
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+
+</head>
+
+
+
+<body>
+
+
+
+    <!--header -->
+
+    <div id="header-container"></div>
+
+
+
+    <!-- Corpo da página -->
+
+    <div class="ui container" style="margin-top: 70px;">
+
+        <div id="mainNews" class="ui segment">
+
+            <h1 class="ui header">
+
+                NVIDIA RTX 50 Series: A Nova Geração de GPUs Chega para Revolucionar o Desempenho Gráfico!
+
+                <!-- Ícones para aumentar/diminuir o tamanho da fonte -->
+
+                <i class="zoom in icon" id="increaseText"
+
+                    style="cursor: pointer; margin-left: 10px; font-size: 18px;"></i>
+
+                <i class="zoom out icon" id="decreaseText" style="cursor: pointer; font-size: 18px;"></i>
+
+                <!-- Ícone de som para narrar o texto -->
+
+                <i class="volume up icon" id="narrateText" style="cursor: pointer; font-size: 18px;"></i>
+
+            </h1>
+
+            <p id="newsContent" style="font-size: 16px;">
+
+                A série RTX 50 da NVIDIA deve marcar uma revolução significativa em relação à série RTX 40 e suas
+
+                antecessoras. Com a nova arquitetura Blackwell, a NVIDIA busca aumentar a eficiência, desempenho e
+
+                recursos gráficos, especialmente em áreas como Ray Tracing e inteligência artificial. Essas melhorias
+
+                devem resultar em uma taxa de quadros mais estável, resolução aprimorada e realismo gráfico de ponta.
+
+                <br>
+
+                <br>
+
+                Uma das expectativas principais é a melhoria no processamento gráfico em 4K e 8K, além de um desempenho
+
+                otimizado para realidades virtuais (VR) e aumentadas (AR), onde a fidelidade visual e a resposta rápida
+
+                são essenciais. Com um processamento mais rápido, os criadores de conteúdo também se beneficiarão em
+
+                áreas como edição de vídeo 3D e renderização gráfica, reduzindo o tempo de espera e aumentando a
+
+                precisão.
+
+                <br>
+
+                <br>
+
+                No mercado, espera-se uma aceleração no ciclo de renovação de GPUs, impulsionando desenvolvedores de
+
+                jogos e software a adaptar seus produtos para tirar proveito total do novo hardware. Esse movimento pode
+
+                criar uma mudança para os usuários de PCs, à medida que mais consumidores buscarão a atualização para a
+
+                série RTX 50, principalmente aqueles interessados em VR, AI e jogos de última geração.
+
+                <br>
+
+                <br>
+
+
+
+                <img class="ui centered image" src="img/nvidiaimage.png" alt="Imagem da Nvidia">
+
+
+
+                <br>
+
+                <br>
+
+                Com o avanço da série RTX 50, a NVIDIA planeja transformar não só o desempenho gráfico, mas também a
+
+                experiência geral dos usuários. Com essa nova arquitetura Blackwell, um dos objetivos principais é
+
+                possibilitar uma jogabilidade ainda mais suave, com um processamento gráfico capaz de lidar com os mais
+
+                altos níveis de detalhes em resoluções 4K e 8K. Além disso, a eficiência aprimorada permitirá que a
+
+                placa
+
+                opere com um consumo de energia mais equilibrado, evitando aquecimento excessivo e proporcionando maior
+
+                durabilidade, mesmo em jogos e aplicações mais exigentes.
+
+                <br>
+
+                <br>
+
+                Outro destaque da série RTX 50 será a integração ainda mais profunda da inteligência artificial no
+
+                processamento gráfico. Tecnologias como o DLSS (Deep Learning Super Sampling) terão atualizações
+
+                significativas, otimizando ainda mais a qualidade visual sem comprometer o desempenho. Isso é
+
+                especialmente vantajoso para gamers e criadores de conteúdo, pois permite renderizar imagens de alta
+
+                resolução com uma fluidez inigualável. Com a IA agindo de forma a ajustar detalhes em tempo real, o
+
+                realismo gráfico se torna mais acessível e impactante para o usuário final.
+
+                <br>
+
+                <br>
+
+                A série RTX 50 também deve redefinir os padrões para realidade virtual e aumentada. Com tempos de
+
+                resposta mais rápidos e gráficos detalhados, os desenvolvedores poderão criar experiências VR e AR mais
+
+                imersivas e realistas. Essa evolução é crucial para indústrias como a do entretenimento e a de educação,
+
+                onde a precisão gráfica e a resposta instantânea do sistema fazem toda a diferença. A expectativa é que
+
+                a série abra novas possibilidades para jogos e aplicações de treinamento em ambientes de realidade
+
+                mista.
+
+                <br>
+
+                <br>
+
+                Além disso, o impacto da série RTX 50 poderá ir além do mercado de hardware. Espera-se que a nova linha
+
+                incentive uma revolução na forma como desenvolvedores criam jogos e softwares, focando em explorar todo
+
+                o potencial do hardware gráfico de ponta. Essa movimentação pode acelerar a transição de tecnologias
+
+                gráficas avançadas para o consumidor comum, tornando os dispositivos de alta performance mais acessíveis
+
+                e disseminando experiências de altíssimo nível a um público maior.
+
+
+
+
+
+
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- rodapé -->
+
+    <div id="footer-container"></div>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            // Carregar o header
+
+            $("#header-container").load("header.html", function () {
+
+                $('.ui.dropdown').dropdown();
+
+            });
+
+
+
+            // Carregar o rodapé
+
+            $("#footer-container").load("footer.html");
+
+
+
+            // Controle de tamanho da fonte
+
+            let fontSize = 16;
+
+            const newsContent = document.getElementById('newsContent');
+
+
+
+            document.getElementById('increaseText').addEventListener('click', () => {
+
+                fontSize += 2;
+
+                newsContent.style.fontSize = fontSize + 'px';
+
+            });
+
+
+
+            document.getElementById('decreaseText').addEventListener('click', () => {
+
+                fontSize = fontSize > 10 ? fontSize - 2 : fontSize;
+
+                newsContent.style.fontSize = fontSize + 'px';
+
+            });
+
+
+
+            // Variáveis para controle da narração
+
+            let isSpeaking = false;
+
+            let speech;
+
+
+
+            // Função para iniciar ou parar a narração
+
+            function toggleNarration() {
+
+                if (isSpeaking) {
+
+                    // Se estiver falando, parar
+
+                    window.speechSynthesis.cancel();
+
+                    isSpeaking = false;
+
+                } else {
+
+                    // Se não estiver falando, iniciar a narração
+
+                    const text = newsContent.innerText;
+
+                    speech = new SpeechSynthesisUtterance(text);
+
+
+
+                    // Definir idioma e voz (tente mudar para a voz desejada, se disponível)
+
+                    speech.lang = 'pt-BR';
+
+                    const voices = window.speechSynthesis.getVoices();
+
+                    const selectedVoice = voices.find(voice => voice.name.includes("Luciana") || voice.lang === "pt-BR");
+
+                    if (selectedVoice) {
+
+                        speech.voice = selectedVoice;
+
+                    }
+
+
+
+                    // Iniciar a narração
+
+                    window.speechSynthesis.speak(speech);
+
+                    isSpeaking = true;
+
+
+
+                    // Resetar a variável quando a fala termina
+
+                    speech.onend = () => {
+
+                        isSpeaking = false;
+
+                    };
+
+                }
+
+            }
+
+
+
+            // Evento de clique no ícone de narração
+
+            document.getElementById('narrateText').addEventListener('click', toggleNarration);
+
+
+
+            // Controle de modo escuro e alto contraste
+
+            $(document).on("click", "#darkModeToggle", function () {
+
+                document.body.classList.toggle("dark-mode");
+
+                document.body.classList.remove("high-contrast");
+
+            });
+
+
+
+            $(document).on("click", "#highContrastToggle", function () {
+
+                document.body.classList.toggle("high-contrast");
+
+                document.body.classList.remove("dark-mode");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+
+
+</html>

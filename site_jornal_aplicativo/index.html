@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Notícias</title>
+
+  <!-- Semantic UI CSS e JS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+  <!-- Cabeçalho -->
+  <div class="ui fixed menu">
+    <div class="ui container">
+      <a href="#" class="header item">
+        <img src="img/Logomenor.png" alt="Logo" style="height: 40px; width: 100px;">
+      </a>
+      <a href="#mainNews" class="item" accesskey="1">Início</a>
+      <a href="#categories" class="item" accesskey="2">Categorias</a>
+      <a href="#footer-container" class="item" accesskey="3">Rodapé</a>
+
+      <div class="right menu">
+        <div class="item">
+          <div class="ui transparent icon input">
+            <input type="text" placeholder="Pesquisar...">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+        <div class="ui dropdown item">
+          Idioma <i class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item">Português</a>
+            <a class="item">Inglês</a>
+            <a class="item">Espanhol</a>
+          </div>
+        </div>
+        <!-- Acessibilidade - Menu dropdown -->
+        <div class="ui dropdown item">
+          Acessibilidade <i class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item" id="darkModeToggle">Modo Escuro</a>
+            <a class="item" id="highContrastToggle">Alto Contraste</a>
+            <a class="item" id="increaseFont">Aumentar Fonte</a>
+            <a class="item" id="decreaseFont">Diminuir Fonte</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conteúdo Principal -->
+  <div class="ui container" style="margin-top: 70px;">
+    <h2 id="mainNews" class="ui header">Notícias Principais</h2>
+    <div class="ui divided items">
+      <div class="item">
+        <div class="image">
+          <img src="img/gpu.png" alt="Imagem da Notícia 1">
+        </div>
+        <div class="content">
+          <a class="header" href="noticia1.html">NVIDIA RTX 50 Series: A nova geração de GPUs chega para revolucionar o
+            desempenho gráfico!</a>
+          <div class="meta"><span>Publicado em: 27/10/2024</span></div>
+          <div class="description">
+            <p>A NVIDIA está prestes a lançar a série RTX 50, prometendo saltos de performance com a nova arquitetura
+              "Blackwell". Com design inovador e tecnologias avançadas, a série 50 busca transformar o mercado de GPUs e
+              oferecer poder gráfico de ponta para gamers e criadores de conteúdo.</p>
+          </div>
+          <div class="extra">
+            <button class="ui right floated button" onclick="location.href='noticia1.html'">Ler Mais</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="image">
+          <img src="img/aranhas.png" alt="Imagem da Notícia 2">
+        </div>
+        <div class="content">
+          <a class="header" href="noticia2.html">Invasão de aranhas na austrália: milhares de aranhas criam cenário
+            assustador em várias cidades</a>
+          <div class="meta"><span>Publicado em: 09/11/2024</span></div>
+          <div class="description">
+            <p>Uma manifestação massiva de aranhas surpreendeu os moradores de diversas cidades na Austrália, cobrindo
+              árvores, edifícios e até veículos com densas camadas de teias. Especialistas afirmam que o fenômeno,
+              embora incomum, ocorre ocasionalmente devido a condições climáticas específicas, que levam as aranhas a
+              migrar em grandes quantidades e tecer enormes redes para se locomoverem. As teias, que parecem véus
+              brancos ao amanhecer, criaram um cenário inusitado e levemente assustador, chamando a atenção de
+              pesquisadores e turistas. As autoridades locais pedem que a população tome precauções ao transitar em
+              áreas afetadas, enquanto aguardam o fim do fenômeno natural.</p>
+          </div>
+          <div class="extra">
+            <button class="ui right floated button" onclick="location.href='noticia2.html'">Ler Mais</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção de Categorias -->
+    <h3 id="categories" class="ui header">Categorias</h3>
+    <div class="ui four column grid">
+      <div class="column">
+        <div class="ui segment">
+          <a href=""><h4>Mundo</h4></a>
+          <p>Notícias internacionais e atualizações globais.</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui segment">
+         <a href=""><h4>Tecnologia</h4></a>
+          <p>Inovações e tendências no setor de tecnologia.</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui segment">
+          <a href=""><h4>Esportes</h4></a>
+          <p>Destaques e resultados esportivos.</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui segment">
+          <a href=""><h4>Economia</h4></a>
+          <p>Análises e notícias econômicas.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrossel de Destaques -->
+    <div class="slider-container">
+      <div class="slides" id="slides">
+        <div class="slide">
+          <img src="img/pingpong.png" alt="Destaque 1">
+          <div class="legend">Cem por Hora! Jogador de Ping Pong mostra energia e habilidade em partida fervorosa</div>
+        </div>
+        <div class="slide">
+          <img src="img/ciclista.png" alt="Destaque 2">
+          <div class="legend">José, ciclista aos 70 anos, inspira com sua história de superação</div>
+        </div>
+        <div class="slide">
+          <img src="img/cachorro.png" alt="Destaque 3">
+          <div class="legend">As 10 raças de cachorro mais dóceis</div>
+        </div>
+      </div>
+      <div class="arrow arrow-left" id="prev">&#10094;</div>
+      <div class="arrow arrow-right" id="next">&#10095;</div>
+    </div>
+
+    <!-- Rodapé -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script>
+      $(document).ready(function () {
+        $('.ui.dropdown').dropdown();
+      });
+       // Carregar o rodapé
+
+       $("#footer-container").load("footer.html");
+
+      // Modo Escuro
+      document.getElementById("darkModeToggle").onclick = () => {
+        document.body.classList.toggle("dark-mode");
+        document.body.classList.remove("high-contrast"); // Remover alto contraste se ativo
+      };
+
+      // Alto Contraste
+      document.getElementById("highContrastToggle").onclick = () => {
+        document.body.classList.toggle("high-contrast");
+        document.body.classList.remove("dark-mode"); // Remover modo escuro se ativo
+      };
+
+      // Aumentar fonte
+      document.getElementById("increaseFont").onclick = () => document.body.style.fontSize = "larger";
+
+      // Diminuir fonte
+      document.getElementById("decreaseFont").onclick = () => document.body.style.fontSize = "smaller";
+
+      // Carrossel de Destaques
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        currentSlide = (index + totalSlides) % totalSlides;
+        const offset = -currentSlide * 100;
+        document.getElementById('slides').style.transform = `translateX(${offset}%)`;
+      }
+
+      document.getElementById('prev').addEventListener('click', () => showSlide(currentSlide - 1));
+      document.getElementById('next').addEventListener('click', () => showSlide(currentSlide + 1));
+
+      // Alternar automaticamente entre os slides a cada 5 segundos
+      setInterval(() => showSlide(currentSlide + 1), 5000);
+
+    </script>
+</body>
+
+</html>
